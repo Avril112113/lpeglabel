@@ -1,0 +1,8 @@
+*.obj
+*.o
+
+lpeglabel.so
+lpeglabel.dll
+lpeglabel.def
+lpeglabel.exp
+lpeglabel.lib

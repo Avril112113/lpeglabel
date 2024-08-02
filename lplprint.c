@@ -262,8 +262,12 @@ void printktable (lua_State *L, int idx) {
     lua_rawgeti(L, -1, i);
     if (lua_isstring(L, -1))
       printf("%s  ", lua_tostring(L, -1));
-    else
-      printf("%s  ", lua_typename(L, lua_type(L, -1)));
+    else {
+      const char* s = luaL_tolstring(L, -1, NULL);
+      printf("\"%s\"  ", s);
+      lua_pop(L, 1);
+      // printf("TTT%s  ", lua_typename(L, lua_type(L, -1)));
+    }
     lua_pop(L, 1);
   }
   printf("]\n");

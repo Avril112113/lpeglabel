@@ -25,7 +25,7 @@ CWARNS = -Wall -Wextra -pedantic \
 CFLAGS = $(CWARNS) $(COPT) -std=c99 -I$(LUADIR) -fPIC
 CC = gcc
 
-FILES = lplvm.o lplcap.o lpltree.o lplcode.o lplprint.o
+FILES = lplvm.o lplcap.o lpltree.o lplcode.o lplprint.o lpltypes.o
 # For Linux
 linux:
 	make lpeglabel.so "DLLFLAGS = -shared -fPIC"
@@ -59,4 +59,5 @@ lplcode.o: lplcode.c lpltypes.h lplcode.h lpltree.h lplvm.h lplcap.h
 lplprint.o: lplprint.c lpltypes.h lplprint.h lpltree.h lplvm.h lplcap.h
 lpltree.o: lpltree.c lpltypes.h lplcap.h lplcode.h lpltree.h lplvm.h lplprint.h
 lplvm.o: lplvm.c lplcap.h lpltypes.h lplvm.h lplprint.h lpltree.h
+lpltypes.o: lpltypes.c lpltypes.h
 

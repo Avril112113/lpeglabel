@@ -15,7 +15,7 @@
 #include "lua.h"
 
 
-#define VERSION         "1.6.1"
+#define VERSION         "1.6.3"
 
 
 #define PATTERN_T	"lpeglabel-pattern"
@@ -36,6 +36,8 @@
 
 #define luaL_setfuncs(L,f,n)	luaL_register(L,NULL,f)
 #define luaL_newlib(L,f)	luaL_register(L,"lpeglabel",f)
+
+const char *luaL_tolstring (lua_State *L, int idx, size_t *len);
 
 typedef size_t lua_Unsigned;
 
